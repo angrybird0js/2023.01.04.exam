@@ -23,7 +23,7 @@ app.use(
 
 const storage = multer.diskStorage({
     destination: (req, res, cb) => {
-      cb(null, _path2) // ./dist/
+      cb(null, _path) // ./dist/
     },
     filename: (req, res, cb) => {
       cb(null, res.originalname) // 
@@ -61,7 +61,7 @@ app.post('/inquiry', function (req, res) {
 
 })  // end app post
 
-app.post('/upload', upload.single('upfile'), (req, res) => {
+app.post('/fup', upload.single('upfile'), (req, res) => {
   // 파일 단독으로 전송옵션
   console.log(req.file) // app.post req 에서 파일 확인
   res.send(
