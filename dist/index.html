@@ -7,13 +7,30 @@
     <title>문의 접수</title>
 </head>
 <body>
+
+    <h1>Router Test</h1>
+    <p> test 실행: localhost:3000/test?id=100&name=nickname 붙여넣기 </p>
+
+    <h1> 문의하기 </h1>
+    
     <form action="inquiry" method="post">
+        <label for="">이름</label>
         <input type="text" name="name" id=""><br>
-        <input type="text" name="age" id=""><br>
-        <textarea name="inq" cols="30" rows="10"></textarea><br>
-        <input type="file" name="upfile" id="" />
-        <input type="submit" value="확인">
-        <button></button>
+        <label for="">나이</label>
+        <input type="text" name="age" id=""><br><br>
+
+        <label for="">요청사항</label><br>
+        <textarea name="txt" cols="30" rows="10"></textarea><br>
+        
+        <input type="submit" value="확인"><br>
+        
     </form>
+
+    <h1>File Upload</h1>
+    <form action="upload" method="post">
+        <input type="file" name="upfile" id="upfile" /><br>
+        <input type="submit" value="확인"><br>
+    </form>
+
 </body>
 </html>
