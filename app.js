@@ -8,6 +8,7 @@ const app = express()
 const port = 3000
 
 const _path = path.join(__dirname, '/dist/')
+// const _path2 = path.join(__dirname, '/dist/download/') // 안됨
 console.log(_path)
 app.use('/', express.static(_path)) // 
 app.use(logger('tiny'))
@@ -22,7 +23,7 @@ app.use(
 
 const storage = multer.diskStorage({
     destination: (req, res, cb) => {
-      cb(null, _path + "../download/") // ./dist/
+      cb(null, _path2) // ./dist/
     },
     filename: (req, res, cb) => {
       cb(null, res.originalname) // 
@@ -65,7 +66,7 @@ app.post('/upload', upload.single('upfile'), (req, res) => {
   console.log(req.file) // app.post req 에서 파일 확인
   res.send(
     `<script>alert("파일 업로드 완료!");location.replace('index.html')</script>`
-  ) // history.go(-1) 
+  ) //  ,, history.go(-1) 
 })
 
 app.get('/test', function( req, res ) {
